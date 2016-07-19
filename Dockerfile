@@ -7,7 +7,7 @@ ENV \
     JAVA_PREFS="/.java/.userPrefs" \
     ZK_HOME="/opt/zookeeper" \
     EXBT_HOME="/opt/exhibitor" \
-    ZK_RELEASE="http://www.apache.org/dist/zookeeper/zookeeper-3.4.6/zookeeper-3.4.6.tar.gz" \
+    ZK_RELEASE="http://www.apache.org/dist/zookeeper/zookeeper-3.4.8/zookeeper-3.4.8.tar.gz" \
     EXHIBITOR_POM="https://raw.githubusercontent.com/Netflix/exhibitor/d911a16d704bbe790d84bbacc655ef050c1f5806/exhibitor-standalone/src/main/resources/buildscripts/standalone/maven/pom.xml" \
     BUILD_DEPS="curl openjdk8 bash tar"
 

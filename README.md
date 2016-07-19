@@ -8,7 +8,7 @@ The image is based on Alpine Linux and is ~272MB.
 
 ### Versions
 * Exhibitor 1.5.5
-* ZooKeeper 3.4.6
+* ZooKeeper 3.4.8
 * Java 1.8
 
 ### Usage
