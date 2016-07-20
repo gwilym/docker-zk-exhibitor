@@ -1,5 +1,12 @@
 #! /bin/bash -e
 
+if [ -n "${DOTENV}" ]; then
+	if [ -r "${DOTENV}" ]; then
+		echo "Sourcing ${DOTENV} ..."
+		source "${DOTENV}"
+	fi
+fi
+
 # Generates the default exhibitor config and launches exhibitor
 
 MISSING_VAR_MESSAGE="must be set"
