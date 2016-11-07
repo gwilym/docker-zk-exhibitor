@@ -6,7 +6,7 @@ Available on the Docker Index as [mbabineau/zookeeper-exhibitor](https://index.d
 
 ### Versions
 * Exhibitor 1.5.5
-* ZooKeeper 3.4.6
+* ZooKeeper 3.4.9
 
 ### Usage
 The container expects the following environment variables to be passed in:
