@@ -2,6 +2,11 @@
 
 # Generates the default exhibitor config and launches exhibitor
 
+if [ "x$CUSTOM_PRE_INIT_SCRIPT" != "x" ]
+then
+  eval $CUSTOM_PRE_INIT_SCRIPT
+fi
+
 MISSING_VAR_MESSAGE="must be set"
 DEFAULT_AWS_REGION="us-west-2"
 DEFAULT_DATA_DIR="/opt/zookeeper/snapshots"
