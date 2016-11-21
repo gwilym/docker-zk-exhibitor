@@ -1,14 +1,16 @@
 Runs an [Exhibitor](https://github.com/Netflix/exhibitor)-managed [ZooKeeper](http://zookeeper.apache.org/) instance using S3 for backups and automatic node discovery.
 
-Available on the Docker Index as [mbabineau/zookeeper-exhibitor](https://index.docker.io/u/mbabineau/zookeeper-exhibitor/):
+Available on the Docker Index as [gwilym/zookeeper-exhibitor](https://index.docker.io/u/gwilym/zookeeper-exhibitor/):
 
-    docker pull mbabineau/zookeeper-exhibitor
+    docker pull gwilym/zookeeper-exhibitor
 
 ### Versions
+
 * Exhibitor 1.5.5
 * ZooKeeper 3.4.9
 
 ### Usage
+
 The container expects the following environment variables to be passed in:
 
 * `HOSTNAME` - addressable hostname for this node (Exhibitor will forward users of the UI to this address)
@@ -34,7 +36,9 @@ Starting the container:
         -e AWS_ACCESS_KEY_ID=<access_key> \
         -e AWS_SECRET_ACCESS_KEY=<secret_key> \
         -e HOSTNAME=<host> \
-        mbabineau/zookeeper-exhibitor:latest
+        gwilym/zookeeper-exhibitor:latest
+
+Using a tag other than `latest` is recommended if predictable deployments are required, so that you don't unintentionally automatically upgrade a running ensemble when new versions of this image are published.
 
 Once the container is up, confirm Exhibitor is running:
 
@@ -92,4 +96,4 @@ Starting the container:
         -e S3_BUCKET=<bucket> \
         -e S3_PREFIX=<key_prefix> \
         -e HOSTNAME=<host> \
-        mbabineau/zookeeper-exhibitor:latest
+        gwilym/zookeeper-exhibitor:latest
