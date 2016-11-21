@@ -12,6 +12,7 @@ DEFAULT_AWS_REGION="us-west-2"
 DEFAULT_DATA_DIR="/opt/zookeeper/snapshots"
 DEFAULT_LOG_DIR="/opt/zookeeper/transactions"
 DEFAULT_ZK_ENSEMBLE_SIZE=0
+DEFAULT_ZK_SETTLING_PERIOD_MS=0
 S3_SECURITY=""
 HTTP_PROXY=""
 : ${HOSTNAME:?$MISSING_VAR_MESSAGE}
@@ -19,6 +20,7 @@ HTTP_PROXY=""
 : ${ZK_DATA_DIR:=$DEFAULT_DATA_DIR}
 : ${ZK_LOG_DIR:=$DEFAULT_LOG_DIR}
 : ${ZK_ENSEMBLE_SIZE:=$DEFAULT_ZK_ENSEMBLE_SIZE}
+: ${ZK_SETTLING_PERIOD_MS:=$DEFAULT_ZK_SETTLING_PERIOD_MS}
 : ${HTTP_PROXY_HOST:=""}
 : ${HTTP_PROXY_PORT:=""}
 : ${HTTP_PROXY_USERNAME:=""}
@@ -39,7 +41,7 @@ cat <<- EOF > /opt/exhibitor/defaults.conf
 	observer-threshold=0
 	election-port=3888
 	zoo-cfg-extra=tickTime\=2000&initLimit\=10&syncLimit\=5&quorumListenOnAllIPs\=true
-	auto-manage-instances-settling-period-ms=0
+	auto-manage-instances-settling-period-ms=$ZK_SETTLING_PERIOD_MS
 	auto-manage-instances=1
 	auto-manage-instances-fixed-ensemble-size=$ZK_ENSEMBLE_SIZE
 EOF
